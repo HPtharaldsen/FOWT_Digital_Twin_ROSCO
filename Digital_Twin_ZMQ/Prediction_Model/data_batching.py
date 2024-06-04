@@ -9,19 +9,19 @@ class PredictionClass():
     def __init__(self):
         self.this_dir = os.path.dirname(os.path.abspath(__file__))
         self.port = "5556"
-        self.batch_data = []  # To store incoming data temporarily with a fixed max length        
-        self.batch_size = 6000  # Number of rows or timesteps per batch
-        self.file_generation_count = 0  # Initialize a counter for file generation
+        self.batch_data = []                     # To store incoming data temporarily with a fixed max length        
+        self.batch_size = 6000                   # Number of rows or timesteps per batch
+        self.file_generation_count = 0           # Initialize a counter for file generation
         self.t_pred = pd.DataFrame()
         self.y_hat = pd.DataFrame()
         self.present_state = None
-        self.has_run_once = False  # Flag to check if simulation has run once
-        self.csv_saved = False  # Flag to check if the CSV has been saved once
+        self.has_run_once = False                # Flag to check if simulation has run once
+        self.csv_saved = False                   # Flag to check if the CSV has been saved once
         self.initial_time = None
         self.timestep = 0.0125
         self.data_frame_inputs = pd.DataFrame()  # Initialize DataFrame
-        self.iteration_count = 0  # Initialize the iteration count outside the loop
-        self.full_measurements = []  # To store all measurements for all timesteps
+        self.iteration_count = 0                 # Initialize the iteration count outside the loop
+        self.full_measurements = []              # To store all measurements for all timesteps
 
     def run_simulation(self, current_time, measurements, plot_figure, time_horizon, pred_error, pred_freq, save_csv, save_csv_time, FUTURE_WAVE_FILE, FOWT_pred_state, MLSTM_MODEL_NAME):
         from Digital_Twin_ZMQ.Prediction_Model.wave_predict import run_DOLPHINN
@@ -62,12 +62,12 @@ class PredictionClass():
             popped_row = self.batch_data.pop(0)
 
         if self.iteration_count % 200 == 0 and len(self.batch_data) < self.batch_size:
-            print(f"Remaining rows until initializing DOLPHINN: {self.batch_size - len(self.batch_data)} (Batch size: {len(self.batch_data)})")
+            print(f"Remaining rows until initializing MLSTM for prediction: {self.batch_size - len(self.batch_data)} (Batch size: {len(self.batch_data)})")
             
         # Check if the last time value is at a whole second
         if len(self.batch_data) >= self.batch_size and current_time % pred_freq == 0:
             data_frame_inputs = pd.DataFrame(self.batch_data, columns=['Time', 'wave'] + required_measurements)
-            print("Running DOLPHINN with input data frame shape:", data_frame_inputs.shape)
+            print("Running MLSTM with input data frame shape:", data_frame_inputs.shape)
             self.t_pred, self.y_hat = run_DOLPHINN(data_frame_inputs, DOLPHINN_PATH, plot_figure, current_time, pred_error, save_csv, save_csv_time, FOWT_pred_state)
             if not self.csv_saved and current_time == 1000:
                 self.control_csv_saved = True
