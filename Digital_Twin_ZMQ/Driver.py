@@ -77,7 +77,7 @@ class CombinedController:
         saturation_threshold = 2 * np.pi / 180                          # Define treshold between prediction and measurement before sending to ROSCO
         pred_freq = 1                                                   # Define frequency of running MLSTM for predictions (Recommended: 1)
         buffer_duration = time_horizon - 1.0125                         # Define how long to buffer prediction
-        K_pred = 1                                                      # Gain to enhance set point signals to ROSCO
+        K_pred = 100                                                    # Gain to enhance set point signals to ROSCO
         save_csv = True                                                 # True: Saves csv-files for control data and simulation results
         save_csv_time = 1000                                            # Define time to save csv
         pitch_prediction_error_deg = 3.7                                # Define prediction amplitude error
@@ -243,8 +243,8 @@ class CombinedController:
             "wave_height": wave_height,
             "peak_period": peak_period,
             "wave_direction": 0,
-            "WvDiffQTF": "False",
-            "WvSumQTF": "False"
+            "WvDiffQTF": "True",
+            "WvSumQTF":  "True"
         }
 
         self.steady_wind = True
