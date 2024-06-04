@@ -25,8 +25,15 @@ class RealTimeServer_class:
             'Pred_B_Buffered': [],
             'RotSpeed': [],
             'WE_Vw': [],
-            'VS_GenPwr': []
+            'VS_GenPwr': [],
+            'PtfmTDX': [],
+            'PtfmTDY': [],
+            'PtfmTDZ': [],
+            'PtfmRDX': [],
+            'PtfmRDY': [],
+            'PtfmRDZ': []
         }
+
         self.register_routes()
         self.start_zmq_listener()
 
@@ -69,6 +76,13 @@ class RealTimeServer_class:
         self.emit_pred_update(self.latest_pred_data['RotSpeed'], 'RotSpeed')
         self.emit_pred_update(self.latest_pred_data['WE_Vw'], 'WE_Vw')
         self.emit_pred_update(self.latest_pred_data['VS_GenPwr'], 'VS_GenPwr')
+        self.emit_pred_update(self.latest_pred_data['PtfmTDX'], 'PtfmTDX')
+        self.emit_pred_update(self.latest_pred_data['PtfmTDY'], 'PtfmTDY')
+        self.emit_pred_update(self.latest_pred_data['PtfmTDZ'], 'PtfmTDZ')
+        self.emit_pred_update(self.latest_pred_data['PtfmRDX'], 'PtfmRDX')
+        self.emit_pred_update(self.latest_pred_data['PtfmRDY'], 'PtfmRDY')
+        self.emit_pred_update(self.latest_pred_data['PtfmRDZ'], 'PtfmRDZ')
+
 
     def start_zmq_listener(self):
         thread = Thread(target=self.listen_for_rul_updates)
@@ -91,7 +105,6 @@ class RealTimeServer_class:
         if 'rul_values_blade_openfast' in message:
             self.update_rul_data('blades_openfast', message['rul_values_blade_openfast'])
         if 'rul_values_tower_openfast' in message:
-            # Ensure the key expected matches the key received
             tower_data = message['rul_values_tower_openfast']
             if 'OpenFAST_RUL_Tower' in tower_data:
                 new_tower_value = tower_data['OpenFAST_RUL_Tower']
@@ -100,31 +113,35 @@ class RealTimeServer_class:
                 self.emit_rul_update({'OpenFAST_RUL_Tower': new_tower_value}, 'tower_openfast')
         if 'Pred_B' in message:
             self.update_pred_data('Pred_B', message['Pred_B'])
-            #print(f"Received prediction data for Pred_B: {message['Pred_B']}")
         if 't_pred' in message:
             self.update_pred_data('t_pred', message['t_pred'])
-            #print(f"Received prediction data for t_pred: {message['t_pred']}")
         if 'present_state_web' in message:
             self.update_pred_data('present_state_web', message['present_state_web'])
-            #print(f"Received prediction data for present_state_web: {message['present_state_web']}")
         if 'current_time' in message:
             self.update_pred_data('current_time', message['current_time'])
-            #print(f"Received current time data: {message['current_time']}")
         if 'Pred_Delta_B' in message:
             self.update_pred_data('Pred_Delta_B', message['Pred_Delta_B'])
-            #print(f"Received Pred_Delta_B data: {message['Pred_Delta_B']}")
         if 'Pred_B_Buffered' in message:
             self.update_pred_data('Pred_B_Buffered', message['Pred_B_Buffered'])
-            #print(f"Received Pred_Delta_B data: {message['Pred_Delta_B']}")
         if 'RotSpeed' in message:
             self.update_pred_data('RotSpeed', message['RotSpeed'])
-            #print(f"Received Pred_Delta_B data: {message['Pred_Delta_B']}")
         if 'WE_Vw' in message:
             self.update_pred_data('WE_Vw', message['WE_Vw'])
-            #print(f"Received Pred_Delta_B data: {message['Pred_Delta_B']}")
         if 'VS_GenPwr' in message:
             self.update_pred_data('VS_GenPwr', message['VS_GenPwr'])
-            #print(f"Received Pred_Delta_B data: {message['Pred_Delta_B']}")
+        if 'PtfmTDX' in message:
+            self.update_pred_data('PtfmTDX', message['PtfmTDX'])
+        if 'PtfmTDY' in message:
+            self.update_pred_data('PtfmTDY', message['PtfmTDY'])
+        if 'PtfmTDZ' in message:
+            self.update_pred_data('PtfmTDZ', message['PtfmTDZ'])
+        if 'PtfmRDX' in message:
+            self.update_pred_data('PtfmRDX', message['PtfmRDX'])
+        if 'PtfmRDY' in message:
+            self.update_pred_data('PtfmRDY', message['PtfmRDY'])
+        if 'PtfmRDZ' in message:
+            self.update_pred_data('PtfmRDZ', message['PtfmRDZ'])
+
 
     def update_rul_data(self, category, new_data):
         for key, value in new_data.items():
