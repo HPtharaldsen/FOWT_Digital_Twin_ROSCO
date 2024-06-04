@@ -29,7 +29,7 @@ class CombinedController:
         self.Activate_Prediction_Model = True   # Activate prediction model for live prediction of future states based on incoming waves
         self.Activate_Fatigue_Model = True      # Activate fatigue model for live RUL Estimation of Tower Base and Blade Roots
 
-        self.chunk_duration = 20                # Define chunk duration for fatigue estimation
+        self.chunk_duration = 3600                # Define chunk duration for fatigue estimation
         self.nominal_design_life = 20           # Define design life of component
 
         self.stress_history = DataCollect(self.output_dir, self.chunk_duration)       
