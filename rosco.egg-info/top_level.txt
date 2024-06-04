@@ -1,0 +1,8 @@
+Examples
+FOWT_Optimal_Control
+Matlab_Toolbox
+ZMQ_Prediction_ROSCO
+docs
+figures
+lib
+rosco

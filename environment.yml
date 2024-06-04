@@ -1,0 +1,22 @@
+channels:
+  - conda-forge
+  - defaults
+
+dependencies:
+  - cmake
+  - cmake-build-extension
+  - control
+  - make
+  - matplotlib
+  - ninja
+  - numpy
+  - pandas
+  - pkg-config
+  - pyYAML
+  - pyparsing
+  - pytest
+  - pyzmq
+  - scipy
+  - sphinx_rtd_theme
+  - treon
+  - wisdem
