@@ -13,7 +13,7 @@ CONTAINS
 
         character(256) :: zmq_address
         real(C_DOUBLE) :: setpoints(5)
-        real(C_DOUBLE) :: turbine_measurements(37)
+        real(C_DOUBLE) :: turbine_measurements(38)
         CHARACTER(*), PARAMETER                 :: RoutineName = 'UpdateZeroMQ'
 
         ! C interface with ZeroMQ client
@@ -23,7 +23,7 @@ CONTAINS
                 import :: C_CHAR, C_DOUBLE
                 implicit none
                 character(C_CHAR), intent(out) :: zmq_address(*)
-                real(C_DOUBLE) :: measurements(37)
+                real(C_DOUBLE) :: measurements(38)
                 real(C_DOUBLE) :: setpoints(5)
             end subroutine zmq_client
         end interface
@@ -69,6 +69,7 @@ CONTAINS
             turbine_measurements(35) = LocalVar%PtfmRAZ
             turbine_measurements(36) = LocalVar%BlPitchCMeas
             turbine_measurements(37) = LocalVar%BlPitch(3)
+            turbine_measurements(38) = LocalVar%WE_Vw
 
             write (zmq_address, '(A,A)') TRIM(CntrPar%ZMQ_CommAddress), C_NULL_CHAR
 #ifdef ZMQ_CLIENT
