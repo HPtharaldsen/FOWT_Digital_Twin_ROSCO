@@ -12,7 +12,7 @@ from rosco.toolbox.ofTools.case_gen.run_FAST import run_FAST_ROSCO
 from rosco.toolbox.control_interface import wfc_zmq_server
 from Prediction_Model.data_batching import PredictionClass
 from Prediction_Model.prediction_functions import Buffer, Saturate
-from Fatigue_Estimation_Model.data_collecting import DataCollect
+from Fatigue_Estimation_Model.stress_history import DataCollect
 from Fatigue_Estimation_Model.fatigue_damage_RUL import RUL_class
 from Live_Monitoring.real_time_server import RealTimeServer_class
 
@@ -39,7 +39,7 @@ class CombinedController:
         self.prediction_instance = PredictionClass()
         self.rul_instance = RUL_class(emit_callback=self.publish_rul_updates, chunk_duration=self.chunk_duration, nominal_design_life_years=self.nominal_design_life)
 
-        self.data_collecting = DataCollect(self.output_dir, self.chunk_duration)       
+        self.stress_history = DataCollect(self.output_dir, self.chunk_duration)       
         self.data_frame = pd.DataFrame()
         self.last_data_check_time = 10
 
@@ -193,11 +193,11 @@ class CombinedController:
 
     def update_system_state(self, current_time, save_to_csv=False, csv_file_path=None):
         if current_time - self.last_data_check_time >= self.chunk_duration/10:
-            new_data = self.data_collecting.read_and_filter_data()
+            new_data = self.stress_history.read_and_filter_data()
             if not new_data.empty: 
                 print(f"Data received for processing at simulation time: {current_time}")
                 self.data_frame = pd.concat([self.data_frame, new_data], ignore_index=True)
-                self.data_collecting.process_data()  # Process the data if new data was read
+                self.stress_history.process_data()  # Process the data if new data was read
                 # Pass each row of new_data to the fatigue analysis
                 for _, row in new_data.iterrows():
                     path_to_save = csv_file_path if csv_file_path else self.csv_file_path
