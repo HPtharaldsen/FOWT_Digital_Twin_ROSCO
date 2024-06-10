@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This project integrates an MLSTM model with OpenFAST and ROSCO to predict the future response of a FOWT, specifically the VolturnUS-S semi-submersible platform coupled with the IEA 15-MW Reference Wind Turbine. The integrated framework consists of a Multiplicative Long Short-Term Memory (MLSTM) neural network for state predictions model based on incoming waves, and a fatigue model for RUL estimations and live monitoring. All development is integrated with the Reference Open-Source Controller (ROSCO) in OpenFAST. A website is also developed for real-time monitoring of the models and simulated operational data from OpenFAST.
+This project integrates an MLSTM model with OpenFAST and ROSCO to predict the future response of a FOWT, specifically the VolturnUS-S semi-submersible platform coupled with the IEA 15-MW Reference Wind Turbine. The integrated framework consists of a Multiplicative Long Short-Term Memory (MLSTM) neural network for state predictions model based on incoming waves, and a fatigue model for RUL estimations of tower base and blade roots, and a website for live monitoring. All development is integrated with the Reference Open-Source Controller (ROSCO) in OpenFAST. A website is also developed for real-time monitoring of the models and simulated operational data from OpenFAST.
 
 ## Simulation Configuration
 
