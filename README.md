@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This project integrates an MLSTM model with OpenFAST and ROSCO to predict the future response of a FOWT, specifically the VolturnUS-S semi-submersible platform coupled with the IEA 15-MW Reference Wind Turbine. The integrated framework consists of an MLSTM state prediction model based on incoming waves, and a fatigue model for RUL estimations and live monitoring. All development is integrated with the Reference Open-Source Controller (ROSCO) in OpenFAST. A website is also developed for real-time monitoring of the models and simulated operational data from OpenFAST.
+This project integrates an MLSTM model with OpenFAST and ROSCO to predict the future response of a FOWT, specifically the VolturnUS-S semi-submersible platform coupled with the IEA 15-MW Reference Wind Turbine. The integrated framework consists of a Multiplicative Long Short-Term Memory (MLSTM) neural network for state predictions model based on incoming waves, and a fatigue model for RUL estimations and live monitoring. All development is integrated with the Reference Open-Source Controller (ROSCO) in OpenFAST. A website is also developed for real-time monitoring of the models and simulated operational data from OpenFAST.
 
 
 ## Simulation Configuration
@@ -29,7 +29,7 @@ Activate Fatigue model:
 
 ## Part 2: State Prediction Model using MLSTM-model based on Incoming Waves
 
-This repository contains the implementation of a predictive control framework for a floating offshore wind turbine (FOWT) using a Multiplicative Long Short-Term Memory (MLSTM) neural network model. The primary objective for the predictive model is to set the framework for future applications for implementing MLSTM-prediction in the ROSCO controller during simulation, using Yuksel R. Alkarem's predictive model. For this specific example, collective blade pitch angle is predicted, thereby laying the framework for future optimization of the ROSCO controller using future predictions, and sending setpoints to the ROSCO controller's collective blade pitch controller. 
+This repository contains the implementation of a predictive control framework for a floating offshore wind turbine (FOWT) using an MLSTM k model. The primary objective for the predictive model is to set the framework for future applications for implementing MLSTM-prediction in the ROSCO controller during simulation, using Yuksel R. Alkarem's predictive model. For this specific example, collective blade pitch angle is predicted, thereby laying the framework for future optimization of the ROSCO controller using future predictions, and sending setpoints to the ROSCO controller's collective blade pitch controller. 
 
 ### Table of Contents
 - [Introduction](#introduction)
