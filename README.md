@@ -23,10 +23,7 @@ Activate Fatigue model:
   self.Activate_Fatigue_Model = True  # Activate fatigue model for live RUL Estimation of Tower Base and Blade Roots
   ``` 
 
-## Part 1: Fatigue model for RUL Estimation and Monitoring
-
-
-## Part 2: State Prediction Model using MLSTM-model based on Incoming Waves
+## Part 1: State Prediction Model using MLSTM-model based on Incoming Waves
 
 This repository contains the implementation of a predictive control framework for a floating offshore wind turbine (FOWT) using an MLSTM model. The primary objective for the predictive model is to set the framework for future applications for implementing MLSTM-prediction in the ROSCO controller during simulation. For this specific example, collective blade pitch angle is predicted, thereby laying the framework for future optimization of the ROSCO controller using future predictions, and sending setpoints to the ROSCO controller's collective blade pitch controller. The existing MLSTM model and framework is located within 'Digital_Twin_ZMQ/Prediction_Model/DOLPHINN', and where the majority of the contents are developed by doctoral candidate Yuksel R. Alkarem from UMaine. His work is retrieved from https://github.com/Yuksel-Rudy/DOLPHINN.git.
 
@@ -114,4 +111,6 @@ In order to train a custom MLSTM-model, this is done by running the following sc
 Specify training data and parameters in:
 
 `/ROSCO/Digital_Twin_ZMQ/Blade_Pitch_Prediction/DOLPHINN/dol_input/training_param.yaml`
+
+## Part 2: Fatigue model for RUL Estimation and Monitoring
 
