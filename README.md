@@ -6,7 +6,7 @@ This project integrates an MLSTM model with OpenFAST and ROSCO to predict the fu
 
 ## Installation guide
 
-The models use ZeroMQ for data communication, requiring Ubuntu or similar. We recommend using a windows subsystem for Linux (WSL), for example the Visual Studio Code WSL extension:
+The models use ZeroMQ for data communication with ROSCO, requiring Ubuntu or similar. We recommend using a windows subsystem for Linux (WSL), for example the Visual Studio Code WSL extension:
 
 https://code.visualstudio.com/docs/remote/wsl
 
