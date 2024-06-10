@@ -34,7 +34,7 @@ The MLSTM-WRP model is integrated with OpenFAST and ROSCO through a series of sc
 
 ### Measurement states used from ROSCO for training and prediction:
 
-- 'BlPitchCMease':
+- 'BlPitchCMeas': Collective Blade Pitch Angle
 - 'PtfmTDX': Surge
 - 'PtfmTDZ': Heave
 - 'PtfmTDY': Sway
