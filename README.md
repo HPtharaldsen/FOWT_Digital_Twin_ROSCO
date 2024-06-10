@@ -11,15 +11,13 @@ Select pre-defined sea state for efficient demo of simulations.
 
 
 Activate Prediction model:
-
-    ```python
+  ```python
     self.Activate_Prediction_Model = True  # Activate prediction model for prediction of future states based on incoming waves
-     ``` 
+  ``` 
 Activate Fatigue model:
-
-    ```python
+  ```python
     self.Activate_Fatigue_Model = True  # Activate fatigue model for live RUL Estimation of Tower Base and Blade Roots
-     ``` 
+  ``` 
 
 ## Part 1: Fatigue model for RUL Estimation and Monitoring
 
