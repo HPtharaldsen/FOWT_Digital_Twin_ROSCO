@@ -6,19 +6,19 @@ In order to configurate the main parameters for simulation, the Driver.py-script
 
 Select pre-defined sea state for efficient demo of simulations.
   ```python
-  self.Sea_State = 2                      # Sea state selection: 1; Hs = 1, Tp = 4.5 - 2; Hs = 2, Tp = 5.5 - 3; Hs = 3.5, Tp = 6.5
+  self.Sea_State = 2  # Sea state selection: 1; Hs = 1, Tp = 4.5 - 2; Hs = 2, Tp = 5.5 - 3; Hs = 3.5, Tp = 6.5
    ``` 
 
 
 Activate Prediction model:
 
     ```python
-    self.Activate_Prediction_Model = True   # Activate prediction model for live prediction of future states based on incoming waves
+    self.Activate_Prediction_Model = True  # Activate prediction model for prediction of future states based on incoming waves
      ``` 
 Activate Fatigue model:
 
     ```python
-    self.Activate_Fatigue_Model = True      # Activate fatigue model for live RUL Estimation of Tower Base and Blade Roots
+    self.Activate_Fatigue_Model = True  # Activate fatigue model for live RUL Estimation of Tower Base and Blade Roots
      ``` 
 
 ## Part 1: Fatigue model for RUL Estimation and Monitoring
