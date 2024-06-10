@@ -2,7 +2,7 @@
 
 ## Simulation Configuration
 
-In order to configurate the main parameters for simulation, the Driver.py-script contains options for choosing pre-defined sea states, and activating the prediction model and the fatigue model.
+In order to configurate the main parameters for simulation, the `Driver.py`-script contains options for choosing pre-defined sea states, and activating the prediction model and the fatigue model.
 
 Select pre-defined sea state for efficient demo of simulations.
   ```python
