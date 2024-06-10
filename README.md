@@ -1,9 +1,30 @@
 # RUL Estimation and Predictive Control of Floating Offshore Wind Turbines
 
+## Simulation Configuration
+
+In order to configurate the main parameters for simulation, the Driver.py-script contains options for choosing pre-defined sea states, and activating the prediction model and the fatigue model.
+
+Select pre-defined sea state for efficient demo of simulations.
+  ```python
+  self.Sea_State = 2                      # Sea state selection: 1; Hs = 1, Tp = 4.5 - 2; Hs = 2, Tp = 5.5 - 3; Hs = 3.5, Tp = 6.5
+   ``` 
+
+
+Activate Prediction model:
+
+    ```python
+    self.Activate_Prediction_Model = True   # Activate prediction model for live prediction of future states based on incoming waves
+     ``` 
+
+    ```python
+    self.Activate_Fatigue_Model = True      # Activate fatigue model for live RUL Estimation of Tower Base and Blade Roots
+     ``` 
+Activate Fatigue model:
+
 ## Part 1: Fatigue model for RUL Estimation and Monitoring
 
 
-## Part 2: MLSTM-WRP FOWT Blade Pitch Prediction Integration
+## Part 2: State Prediction Model using MLSTM-model based on Incoming Waves
 
 This repository contains the implementation of a predictive control framework for a floating offshore wind turbine (FOWT) using a Multiplicative Long Short-Term Memory (MLSTM) neural network model. The primary goal is to predict the collective blade pitch angle in real-time, leveraging incoming wave elevation data and current FOWT measurements, to improve the response of the ROSCO blade pitch controller and reduce structural fatigue.
 
@@ -44,14 +65,21 @@ The MLSTM-WRP model is integrated with OpenFAST and ROSCO through a series of sc
   
 
 ### Prediction Model Usage with OpenFAST:
-1. Configure the `Driver.py` script with the desired load case, model, and simulation settings.
 
-Prediction model configuration during simulation in the `wfc_controller` in `Driver.py`:
+Specify Prediction model configuration during simulation in the `wfc_controller` in `Driver.py`:
 
 - Specify which FOWT state to use for prediction and monitoring. Choosing "BlPitchCMeas" allows for Buffer and Saturate-initiation, while other DOFS only provide prediction and monitoring:
     ```python
     FOWT_pred_state = 'BlPitchCMeas'
-     ``` 
+     ```
+- Specify wind speeds within the sim_openfast_custom-function:
+    ```python
+        if self.steady_wind:
+            r.wind_case_opts.update({"wind_type": 1, "HWindSpeed": 12.5})   # Change 12.5 to desired steady wind speed
+        else:
+            r.wind_case_opts.update({"turb_wind_speed": "20"})              # Change 20 to desired turbulent wind speed
+       ```
+
 - Specify trained MLSTM-model:
     ```python
     MLSTM_MODEL_NAME = TrainingData_Hs_2_75_Tp_6 # Trained MLSTM model
@@ -80,16 +108,6 @@ Prediction model configuration during simulation in the `wfc_controller` in `Dri
     ```python
     pred_error = 1.4 # [deg]
      ```
-    
-2. To run a simulation with Load Case 2, the `Driver.py` script should be configured as follows in the `__init__`:
-  ```python
-  self.Load_Case = 2
-   ```
-
-3. Run the main driver script:
-```bash
-python Driver.py
-```
 
 #### MLSTM model training:
 
