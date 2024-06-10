@@ -15,11 +15,11 @@ Activate Prediction model:
     ```python
     self.Activate_Prediction_Model = True   # Activate prediction model for live prediction of future states based on incoming waves
      ``` 
+Activate Fatigue model:
 
     ```python
     self.Activate_Fatigue_Model = True      # Activate fatigue model for live RUL Estimation of Tower Base and Blade Roots
      ``` 
-Activate Fatigue model:
 
 ## Part 1: Fatigue model for RUL Estimation and Monitoring
 
