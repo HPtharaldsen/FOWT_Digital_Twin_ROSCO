@@ -1,5 +1,11 @@
 # RUL Estimation and Predictive Control of Floating Offshore Wind Turbines
 
+## Introduction
+
+This project integrates an MLSTM model with OpenFAST and ROSCO to predict the future response of a FOWT. The prediction model aims to provide a time advantage to blade actuators by predicting future states based on wave elevation data and current FOWT measurements.
+
+The primary objective is to set the framework for future applications for implementing MLSTM-prediction in the ROSCO controller during simulation, using Yuksel R. Alkarem's predictive model. For this specific example, collective blade pitch angle is predicted, thereby laying the framework forpotentially decreasing structural fatigue and optimize power production of the FOWT by predicting future collective blade pitch angle based on incoming wave data, and sending setpoints to the ROSCO controller. 
+
 ## Simulation Configuration
 
 In order to configurate the main parameters for simulation, the `Driver.py`-script contains options for choosing pre-defined sea states, and activating the prediction model and the fatigue model.
@@ -33,12 +39,6 @@ This repository contains the implementation of a predictive control framework fo
 - [Scripts Overview](#scripts-overview)
 - [Contributing](#contributing)
 - [License](#license)
-
-### Introduction
-
-This project integrates an MLSTM model with OpenFAST and ROSCO to predict the future response of a FOWT. The prediction model aims to provide a time advantage to blade actuators by predicting future states based on wave elevation data and current FOWT measurements.
-
-The primary objective is to set the framework for future applications for implementing MLSTM-prediction in the ROSCO controller during simulation, using Yuksel R. Alkarem's predictive model. For this specific example, the aim is to reduce wave-induced motions, thereby decreasing structural fatigue and increasing the remaining useful life (RUL) of the FOWT by predicting future collective blade pitch angle based on incoming wave data, and sending setpoints to the ROSCO controller. 
 
 ### Blade Pitch Prediction Architecture
 
