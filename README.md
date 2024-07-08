@@ -45,8 +45,6 @@ If using a Conda or Miniconda, do this within the respective conda folder or env
 4. Install necessary requirements
   ```python
   cd FOWT_Digital_Twin_ROSCO # Change to correct directory
-  ```
-  ```python
   pip install -r requirements.txt
   conda install -c anaconda tk
   ```
