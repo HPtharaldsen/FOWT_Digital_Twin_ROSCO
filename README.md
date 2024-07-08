@@ -28,6 +28,8 @@ https://docs.anaconda.com/free/miniconda/
   conda activate rosco-env # (Activate your "rosco-env" environment)
   ```
 
+2. Clone and Install the ROSCO toolbox with ROSCO controller
+
   ```python
   git clone https://github.com/NREL/ROSCO.git
   cd ROSCO
