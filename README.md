@@ -2,7 +2,7 @@
 
 ### Table of Contents
 - [Introduction](#introduction)
-- [Installation guide](#Installation guide)
+- [Installation guide](#Installation-guide)
 - [Simulation Configuration](#Simulation Configuration)
 - [Part 1: Prediciton Model](#Part 1: State Prediction Model using MLSTM-model based on Incoming Waves)
 - [Part 2: Fatigue model for RUL Estimation and Monitoring](#Part 2: Fatigue model for RUL Estimation and Monitoring)
