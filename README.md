@@ -35,7 +35,7 @@ If using a Conda or Miniconda, do this within the respective conda folder or env
   ```
   ```python
   which openfast # Check that openfast installed properly
-  openfast -v
+  openfast -v # Test
   ```
 
 3. Clone and Install FOWT_Digital_Twin_ROSCO w/ requirements.txt
