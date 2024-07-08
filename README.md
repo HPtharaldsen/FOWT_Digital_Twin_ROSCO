@@ -49,7 +49,7 @@ On 64-bit Windows, CMake can be installed as below:
   conda install cmake make  # if Windows users would like to install these in anaconda environment
   ```
 
-4. Compile ROSOC using CMake
+4. Compile ROSCO using CMake
   ```python
   # Compile ROSCO
   cd ROSCO/rosco/controller
