@@ -27,8 +27,8 @@ If using a Conda or Miniconda, do this within the respective conda folder or env
 
   ```python
   conda config --add channels conda-forge # (Enable Conda-forge Channel For Conda Package Manager)
-  conda create -y --name rosco-env python=3.10 # (Create a new environment named "rosco-env" that contains Python 3.8)
-  conda activate rosco-env # (Activate your "rosco-env" environment)
+  conda create -y --name DT-zmq-env python=3.10 # (Create a new environment named "rosco-env" that contains Python 3.8)
+  conda activate DT-zmq-env # (Activate your "rosco-env" environment)
   ```
 
 2. Clone and Install FOWT_Digital_Twin_ROSCO
