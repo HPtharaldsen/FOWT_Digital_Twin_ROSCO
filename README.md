@@ -6,6 +6,7 @@
 - [Simulation Configuration](#Simulation-Configuration)
 - [Part 1: Prediciton Model](#Part-1-State-Prediction-Model-using-MLSTM-model-based-on-Incoming-Waves)
 - [Part 2: Fatigue model for RUL Estimation and Monitoring](#Part-2-Fatigue-model-for-RUL-Estimation-and-Monitoring)
+- [Acknowledgements](#Acknowledgements)
 
 ## Introduction
 This project integrates an MLSTM model with OpenFAST and ROSCO to predict the future response of a FOWT, specifically the VolturnUS-S semi-submersible platform coupled with the IEA 15-MW Reference Wind Turbine. The integrated framework consists of a Multiplicative Long Short-Term Memory (MLSTM) neural network for state predictions model based on incoming waves, and a fatigue model for RUL estimations of tower base and blade roots, and a website for live monitoring. All development is integrated with the Reference Open-Source Controller (ROSCO) in OpenFAST. A website is also developed for real-time monitoring of the models and simulated operational data from OpenFAST.
@@ -170,4 +171,14 @@ Specify training data and parameters in:
 `/ROSCO/Digital_Twin_ZMQ/Blade_Pitch_Prediction/DOLPHINN/dol_input/training_param.yaml`
 
 ## Part 2: Fatigue model for RUL Estimation and Monitoring
+
+## Acknowledgements
+
+This project includes code from the following repositories:
+
+- **[DOLPHINN](https://github.com/Yuksel-Rudy/DOLPHINN)**: An MLSTM framework developed by Yuksel R. Alkarem for predicting FOWT behavior based on incoming wave data. Most of the contents in the `Digital_Twin_ZMQ/Prediction_Model/DOLPHINN` folder are developed by Yuksel R. Alkarem.
+- **[NREL/ROSCO]([https://github.com/Yuksel-Rudy/DOLPHINN](https://github.com/NREL/ROSCO))**: The ROSCO controller code and examples are retrieved from the National Renewable Energy Laboratory's ROSCO repository.
+- 
+Special thanks to Yuksel R. Alkarem and the NREL ROSCO development team for their contributions.
+
 
