@@ -41,6 +41,24 @@ For any questions, visit https://rosco.readthedocs.io/en/latest/source/install.h
   sudo apt-get install pkg-config # Added line for ZeroMQ to work
   pip install -e .
   ```
+3. Install CMake
+On 64-bit Windows, CMake can be installed as below:
+
+  ```python
+  conda install m2w64-toolchain libpython
+  conda install cmake make  # if Windows users would like to install these in anaconda environment
+  ```
+
+4. Compile ROSOC using CMake
+  ```python
+  # Compile ROSCO
+  cd ROSCO/rosco/controller
+  mkdir build
+  cd build
+  cmake ..                        # Mac/linux only
+  cmake .. -G "MinGW Makefiles"   # Windows only
+  make install
+  ```
 
 ## Simulation Configuration
 
