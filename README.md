@@ -1,7 +1,6 @@
 # RUL Estimation and Predictive Control of Floating Offshore Wind Turbines
 
 ## Introduction
-
 This project integrates an MLSTM model with OpenFAST and ROSCO to predict the future response of a FOWT, specifically the VolturnUS-S semi-submersible platform coupled with the IEA 15-MW Reference Wind Turbine. The integrated framework consists of a Multiplicative Long Short-Term Memory (MLSTM) neural network for state predictions model based on incoming waves, and a fatigue model for RUL estimations of tower base and blade roots, and a website for live monitoring. All development is integrated with the Reference Open-Source Controller (ROSCO) in OpenFAST. A website is also developed for real-time monitoring of the models and simulated operational data from OpenFAST.
 
 ## Installation guide
@@ -27,19 +26,27 @@ If using a Conda or Miniconda, do this within the respective conda folder or env
 
   ```python
   conda config --add channels conda-forge # (Enable Conda-forge Channel For Conda Package Manager)
-  conda create -y --name DT-zmq-env python=3.10 # (Create a new environment named "rosco-env" that contains Python 3.8)
-  conda activate DT-zmq-env # (Activate your "rosco-env" environment)
+  conda create -y --name DT-zmq-env python=3.10 # (Create a new environment named "DT-zmq-env" that contains Python 3.10)
+  conda activate DT-zmq-env # (Activate your "DT-zmq-env" environment)
+  ```
+2. Install OpenFAST
+  ```python
+  conda install -c conda-forge openfast
+  ```
+  ```python
+  which openfast # Check that openfast installed properly
+  openfast -v
   ```
 
-2. Clone and Install FOWT_Digital_Twin_ROSCO
-
+3. Clone and Install FOWT_Digital_Twin_ROSCO w/ requirements.txt
   ```python
   git clone https://github.com/HPtharaldsen/FOWT_Digital_Twin_ROSCO.git
   ```
-3. Change directory to Digital_Twin_ZMQ
   ```python
-  cd FOWT_Digital_Twin_ROSCO/Digital_Twin_ZMQ
+  pip install -r requirements.txt
+  conda install -c anaconda tk
   ```
+
 ## Simulation Configuration
 
 In order to configurate the main parameters for simulation, the `Driver.py`-script within 'Digital_Twin_ZMQ/' contains options for choosing pre-defined sea states, and activating the prediction model and the fatigue model.
