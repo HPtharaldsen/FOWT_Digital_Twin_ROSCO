@@ -18,7 +18,7 @@ Within the WSL, we recommend installing miniconda or similar as a Python environ
 
 https://docs.anaconda.com/free/miniconda/
 
-### ROSCO installation (according to the ROSCO documentation)
+### FOWT_Digital_Twin_ROSCO installation
 
 If using a Conda or Miniconda, do this within the respective conda folder or environment
 (e.g. within the authors' setup with miniconda, the working directory is: \\wsl.localhost\Ubuntu\home\hpsauce\miniconda3).
@@ -38,7 +38,10 @@ For any questions, visit https://rosco.readthedocs.io/en/latest/source/install.h
   ```python
   git clone https://github.com/HPtharaldsen/FOWT_Digital_Twin_ROSCO.git
   ```
-
+3. Change directory
+  ```python
+  cd FOWT_Digital_Twin_ROSCO
+  ```
 ## Simulation Configuration
 
 In order to configurate the main parameters for simulation, the `Driver.py`-script within 'Digital_Twin_ZMQ/' contains options for choosing pre-defined sea states, and activating the prediction model and the fatigue model.
