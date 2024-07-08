@@ -38,9 +38,9 @@ For any questions, visit https://rosco.readthedocs.io/en/latest/source/install.h
   ```python
   git clone https://github.com/HPtharaldsen/FOWT_Digital_Twin_ROSCO.git
   ```
-3. Change directory
+3. Change directory to Digital_Twin_ZMQ
   ```python
-  cd FOWT_Digital_Twin_ROSCO
+  cd FOWT_Digital_Twin_ROSCO/Digital_Twin_ZMQ
   ```
 ## Simulation Configuration
 
