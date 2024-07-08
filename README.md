@@ -31,6 +31,7 @@ https://docs.anaconda.com/free/miniconda/
   ```python
   git clone https://github.com/NREL/ROSCO.git
   cd ROSCO
+  sudo apt-get install pkg-config
   pip install -e .
   ```
 
