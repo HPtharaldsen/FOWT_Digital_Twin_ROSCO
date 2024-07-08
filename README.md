@@ -20,8 +20,8 @@ https://docs.anaconda.com/free/miniconda/
 
 ### ROSCO installation (according to the ROSCO documentation)
 
-If using a Conda or Miniconda, do this within the respective conda folder or environment. 
-(E.g. within the authors' setup with miniconda, the working directory is: \\wsl.localhost\Ubuntu\home\hpsauce\miniconda3)
+If using a Conda or Miniconda, do this within the respective conda folder or environment
+(e.g. within the authors' setup with miniconda, the working directory is: \\wsl.localhost\Ubuntu\home\hpsauce\miniconda3).
 
 1. Create a conda environment for ROSCO.
 
