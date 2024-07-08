@@ -1,5 +1,12 @@
 # RUL Estimation and Predictive Control of Floating Offshore Wind Turbines
 
+### Table of Contents
+- [Introduction](#introduction)
+- [Installation guide](#Installation guide)
+- [Simulation Configuration](#Simulation Configuration)
+- [Part 1: Prediciton Model](#Part 1: State Prediction Model using MLSTM-model based on Incoming Waves)
+- [Part 2: Fatigue model for RUL Estimation and Monitoring](#Part 2: Fatigue model for RUL Estimation and Monitoring)
+
 ## Introduction
 This project integrates an MLSTM model with OpenFAST and ROSCO to predict the future response of a FOWT, specifically the VolturnUS-S semi-submersible platform coupled with the IEA 15-MW Reference Wind Turbine. The integrated framework consists of a Multiplicative Long Short-Term Memory (MLSTM) neural network for state predictions model based on incoming waves, and a fatigue model for RUL estimations of tower base and blade roots, and a website for live monitoring. All development is integrated with the Reference Open-Source Controller (ROSCO) in OpenFAST. A website is also developed for real-time monitoring of the models and simulated operational data from OpenFAST.
 
@@ -61,7 +68,6 @@ If using a Conda or Miniconda, do this within the respective conda folder or env
    ```
 
 
-
 ## Simulation Configuration
 
 In order to configurate the main parameters for simulation, the `Driver.py`-script within 'Digital_Twin_ZMQ/' contains options for choosing pre-defined sea states, and activating the prediction model and the fatigue model.
@@ -85,13 +91,6 @@ Activate Fatigue model:
 
 This repository contains the implementation of a predictive control framework for a floating offshore wind turbine (FOWT) using an MLSTM model. The primary objective for the predictive model is to set the framework for future applications for implementing MLSTM-prediction in the ROSCO controller during simulation. For this specific example, collective blade pitch angle is predicted, thereby laying the framework for future optimization of the ROSCO controller using future predictions, and sending setpoints to the ROSCO controller's collective blade pitch controller. The existing MLSTM model and framework is located within 'Digital_Twin_ZMQ/Prediction_Model/DOLPHINN', and where the majority of the contents are developed by doctoral candidate Yuksel R. Alkarem from UMaine. His work is retrieved from https://github.com/Yuksel-Rudy/DOLPHINN.git.
 
-### Table of Contents
-- [Introduction](#introduction)
-- [Architecture](#architecture)
-- [Usage](#usage)
-- [Scripts Overview](#scripts-overview)
-- [Contributing](#contributing)
-- [License](#license)
 
 ### Blade Pitch Prediction Architecture
 
