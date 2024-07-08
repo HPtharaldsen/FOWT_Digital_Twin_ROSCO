@@ -48,6 +48,14 @@ If using a Conda or Miniconda, do this within the respective conda folder or env
   pip install -r requirements.txt
   conda install -c anaconda tk
   ```
+5. Run simulation
+   Change to the correct directory to run the Digital Twin with ZeroMQ
+   ```python
+   cd Digital_Twin_ZMQ
+   ```
+
+   Run Driver.py (Tip: for efficient testing, set '"WvDiffQTF": "False" and"WvSumQTF":  "False"' in lines 246 and 247)
+
 
 ## Simulation Configuration
 
