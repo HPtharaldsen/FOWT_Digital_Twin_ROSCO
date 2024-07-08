@@ -22,11 +22,11 @@ https://docs.anaconda.com/free/miniconda/
 
 1. Create a conda environment for ROSCO
 
-  '''python
+  ```python
   conda config --add channels conda-forge # (Enable Conda-forge Channel For Conda Package Manager)
   conda create -y --name rosco-env python=3.10 # (Create a new environment named "rosco-env" that contains Python 3.8)
   conda activate rosco-env # (Activate your "rosco-env" environment)
-  '''
+  ```
 
 
 
