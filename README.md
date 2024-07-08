@@ -54,8 +54,10 @@ If using a Conda or Miniconda, do this within the respective conda folder or env
    cd Digital_Twin_ZMQ # Change directory to run the digital twin w/ ZeroMQ
    ```
    Run Driver.py (Tip: for efficient testing, set '"WvDiffQTF": "False" and"WvSumQTF":  "False"' in lines 246 and 247)
+   
+   Example line for running Driver.py w/ miniconda:
    ```python
-   /home/hpsauce/miniconda3/envs/DT-zmq-env/bin/python /home/hpsauce/miniconda3/FOWT_Digital_Twin_ROSCO/Digital_Twin_ZMQ/Driver.py # Example line for running Driver.py
+   /home/username/miniconda3/envs/DT-zmq-env/bin/python /home/username/miniconda3/FOWT_Digital_Twin_ROSCO/Digital_Twin_ZMQ/Driver.py
    ```
 
 
