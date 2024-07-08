@@ -31,7 +31,7 @@ https://docs.anaconda.com/free/miniconda/
   ```python
   git clone https://github.com/NREL/ROSCO.git
   cd ROSCO
-  sudo apt-get install pkg-config
+  sudo apt-get install pkg-config # Added line for ZeroMQ to work
   pip install -e .
   ```
 
