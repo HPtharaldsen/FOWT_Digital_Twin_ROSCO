@@ -29,7 +29,7 @@ If using a Conda or Miniconda, do this within the respective conda folder or env
   conda create -y --name DT-zmq-env python=3.10 # (Create a new environment named "DT-zmq-env" that contains Python 3.10)
   conda activate DT-zmq-env # (Activate your "DT-zmq-env" environment)
   ```
-2. Install OpenFAST
+2. Install OpenFAST within the new environment (DT-zmq-env)
   ```python
   conda install -c conda-forge openfast
   ```
