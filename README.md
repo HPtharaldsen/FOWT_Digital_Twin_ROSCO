@@ -177,7 +177,7 @@ Specify training data and parameters in:
 This project includes code from the following repositories:
 
 - **[DOLPHINN](https://github.com/Yuksel-Rudy/DOLPHINN)**: An MLSTM framework developed by Yuksel R. Alkarem for predicting FOWT behavior based on incoming wave data. Most of the contents in the `Digital_Twin_ZMQ/Prediction_Model/DOLPHINN` folder are developed by Yuksel R. Alkarem.
-- **[NREL/ROSCO]([https://github.com/Yuksel-Rudy/DOLPHINN](https://github.com/NREL/ROSCO))**: The ROSCO controller code and examples are retrieved from the National Renewable Energy Laboratory's ROSCO repository.
+- **[NREL/ROSCO](https://github.com/NREL/ROSCO)**: The ROSCO controller code and examples are retrieved from the National Renewable Energy Laboratory's ROSCO repository.
 - 
 Special thanks to Yuksel R. Alkarem and the NREL ROSCO development team for their contributions.
 
