@@ -36,10 +36,7 @@ For any questions, visit https://rosco.readthedocs.io/en/latest/source/install.h
 2. Clone and Install FOWT_Digital_Twin_ROSCO
 
   ```python
-  git clone https://github.com/NREL/ROSCO.git
-  cd ROSCO
-  sudo apt-get install pkg-config # Added line for ZeroMQ to work
-  pip install -e .
+  git clone https://github.com/HPtharaldsen/FOWT_Digital_Twin_ROSCO.git
   ```
 
 ## Simulation Configuration
