@@ -28,7 +28,11 @@ https://docs.anaconda.com/free/miniconda/
   conda activate rosco-env # (Activate your "rosco-env" environment)
   ```
 
-
+  ```python
+  git clone https://github.com/NREL/ROSCO.git
+  cd ROSCO
+  pip install -e .
+  ```
 
 ## Simulation Configuration
 
