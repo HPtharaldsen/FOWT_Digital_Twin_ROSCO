@@ -11,7 +11,7 @@ The models use ZeroMQ for data communication with ROSCO, requiring Ubuntu or sim
 
 https://code.visualstudio.com/docs/remote/wsl
 
-### MIniconda
+### Miniconda
 
 Within the WSL, we recommend installing miniconda or similar as a Python environment:
 
