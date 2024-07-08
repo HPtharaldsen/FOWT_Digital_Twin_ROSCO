@@ -20,7 +20,9 @@ https://docs.anaconda.com/free/miniconda/
 
 ### ROSCO installation (according to the ROSCO documentation)
 
-1. Create a conda environment for ROSCO
+If using a Conda or Miniconda, do this within the respective conda folder or environment:
+
+1. Create a conda environment for ROSCO.
 
   ```python
   conda config --add channels conda-forge # (Enable Conda-forge Channel For Conda Package Manager)
