@@ -183,7 +183,7 @@ The fatigue model consists of two primary scripts:
 Configure the `Driver.py` script to activate the fatigue model:
 ```python
 self.Activate_Fatigue_Model = True  # Enable fatigue model
-
+ ```
 ## Part 3: Live Monitoring
 
 This section describes the setup and use of the live monitoring system, which provides real-time updates on the turbine's operational status and predicted RUL.
