@@ -170,12 +170,12 @@ Specify training data and parameters in:
 
 `/ROSCO/Digital_Twin_ZMQ/Blade_Pitch_Prediction/DOLPHINN/dol_input/training_param.yaml`
 
-## Part 2: Fatigue Model for RUL Estimation
+## Part 2: Fatigue Estimation Model
 
-This section elaborates on the implementation and usage of a fatigue model for RUL estimation. 
+This repository contains the implementation and usage of a fatigue model for RUL estimation. 
 
-### Fatigue Model Architecture
-The fatigue model consists of two primary scripts:
+### Fatigue Estimation Model Architecture
+The Fatigue Estimation Model consists of:
 - **fatigue_damage_RUL.py**: Updates measurements, performs rainflow counting on stress history, calculates fatigue damage, and estimates RUL.
 - **stress_history.py**: Gathers stress data in real time.
 
@@ -186,28 +186,23 @@ self.Activate_Fatigue_Model = True  # Enable fatigue model
  ```
 ## Part 3: Live Monitoring
 
-This section describes the setup and use of the live monitoring system, which provides real-time updates on the turbine's operational status and predicted RUL.
+This repository contauins the implementation and usage of a live monitoring system, which provides real-time updates on the turbine's operational status and predicted RUL.
 
 ### Live Monitoring Architecture
 The live monitoring system consists of:
 - **real_time_server.py**: A script that serves real-time data to the webpage.
 - **webpage.html**: The HTML file that displays the live data.
 
-### Setting Up the Live Monitoring System
-1. **Run the Real-Time Server**: Start the `real_time_server.py` script to begin serving data.
+### Running the Live Monitoring System
+1. **Run the Real-Time Server**: Open a terminal and start the `real_time_server.py` script to begin serving data.
     ```python
     python real_time_server.py  # Start the real-time server
     ```
-2. **Access the Webpage**: Open `webpage.html` in a web browser to view live updates.
-    ```html
-    <html>
-        <!-- HTML content to display live data -->
-    </html>
+2. **Run Driver Script**: Ensure `Driver.py` is running simultaneously in a separate terminal.
+    ```python
+    python Driver.py  # Start the driver script
     ```
-
-### Usage Instructions
-1. **Start the Real-Time Server**: Ensure the server script is running to provide data.
-2. **Open the Monitoring Webpage**: Access `webpage.html` in a browser to monitor the turbine in real-time.
+3. **Access the Monitoring Webpage**: Open a web browser and navigate to [http://localhost:5005/](http://localhost:5005/) to view live updates.
 
 ## Acknowledgements
 
