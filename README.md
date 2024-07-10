@@ -170,7 +170,19 @@ Specify training data and parameters in:
 
 `/ROSCO/Digital_Twin_ZMQ/Blade_Pitch_Prediction/DOLPHINN/dol_input/training_param.yaml`
 
-## Part 2: Fatigue model for RUL Estimation and Monitoring
+## Part 2: Fatigue Model for RUL Estimation and Monitoring
+
+This section elaborates on the implementation and usage of a fatigue model for RUL estimation and monitoring of FOWTs. 
+
+### Fatigue Model Architecture
+The fatigue model consists of two primary scripts:
+- **fatigue_damage_RUL.py**: Updates measurements, performs rainflow counting on stress history, calculates fatigue damage, and estimates RUL.
+- **stress_history.py**: Gathers stress data in real time.
+
+### Integration with Simulation
+Configure the `Driver.py` script to activate the fatigue model:
+```python
+self.Activate_Fatigue_Model = True  # Enable fatigue model
 
 ## Acknowledgements
 
