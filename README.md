@@ -6,7 +6,7 @@
 - [Simulation Configuration](#Simulation-Configuration)
 - [Part 1: Prediciton Model](#Part-1-State-Prediction-Model-using-MLSTM-model-based-on-Incoming-Waves)
 - [Part 2: Fatigue model for RUL Estimation and Monitoring](#Part-2-Fatigue-model-for-RUL-Estimation-and-Monitoring)
-- [Part 3: Live Monitoring](#Part-3:-Live-Monitoring)
+- [Part 3: Live Monitoring](#Part-3-Live-Monitoring)
 - [Acknowledgements](#Acknowledgements)
 
 ## Introduction
