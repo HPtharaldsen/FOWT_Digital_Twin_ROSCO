@@ -186,7 +186,7 @@ self.Activate_Fatigue_Model = True  # Enable fatigue model
  ```
 ## Part 3: Live Monitoring
 
-This repository contauins the implementation and usage of a live monitoring system, which provides real-time updates on the turbine's operational status and predicted RUL.
+This repository contains the implementation and usage of a live monitoring system, which provides real-time updates on the turbine's operational status, predicted component RUL and blade pitch angle predictions based on incoming waves.
 
 ### Live Monitoring Architecture
 The live monitoring system consists of:
