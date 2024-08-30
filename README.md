@@ -30,7 +30,7 @@ https://docs.anaconda.com/free/miniconda/
 
 If using a Conda or Miniconda, do this within the respective conda folder or environment
 (e.g. within the authors' setup with miniconda, the working directory is: \\wsl.localhost\Ubuntu\home\hpsauce\miniconda3).
-
+ 
 1. Create a conda environment for ROSCO.
 
   ```python
